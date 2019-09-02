@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_restful import Api, Resource, request
+from flask_restful import Api, request
 import pandas as pd
 import re
 from numpy import argmax
@@ -59,7 +59,7 @@ def online_cluster(df: pd.DataFrame):
     dictionary.filter_extremes(no_below=len(texts) / 1000, no_above=0.5, keep_n=len(texts) * 50)
     corpus = [dictionary.doc2bow(text) for text in texts]
 
-    lda = models.ldamodel.LdaModel(corpus, num_topics=20, id2word=dictionary, passes=40)
+    lda = models.ldamodel.LdaModel(corpus, num_topics=10, id2word=dictionary, passes=40)
 
     cluster_ids = []
     cluster_label_vectors = []
