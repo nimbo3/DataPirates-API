@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_restful import Api, Resource, request
+from flask_restful import Api, request
 import pandas as pd
 import re
 from numpy import argmax
@@ -75,4 +75,4 @@ def online_cluster(df: pd.DataFrame):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")
