@@ -75,4 +75,4 @@ def online_cluster(df: pd.DataFrame):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")
